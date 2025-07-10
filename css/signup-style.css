@@ -1,0 +1,292 @@
+/* signup-style.css */
+body {
+    font-family: '맑은 고딕', 'Malgun Gothic', Arial, sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* 회원가입 페이지 전용 헤더 */
+.signup-page-header {
+    background-color: #fff;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.signup-page-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.signup-page-header h1 {
+    font-size: 1.5em;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.signup-page-header .container > a > img {
+    cursor: pointer;
+    transition: transform 0.2s cubic-bezier(.4,2,.6,1), box-shadow 0.2s, filter 0.2s;
+}
+
+.signup-page-header .container > a > img:hover {
+    transform: scale(1.08) rotate(-2deg);
+    box-shadow: 0 4px 16px 0 rgba(0,0,0,0.13);
+    filter: brightness(1.08);
+}
+
+/* 메인 회원가입 컨테이너 */
+.signup-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.signup-box {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 720px; /* 로그인 박스보다 넓게 설정 */
+}
+
+.signup-box h2 {
+    font-size: 2em;
+    color: #1a5fd6;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.signup-description {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-step {
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 6px;
+}
+
+.form-step h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.9em;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+.input-group label .required {
+    color: #d9534f;
+    margin-left: 3px;
+}
+
+.input-group input[type="text"],
+.input-group input[type="password"],
+.input-group input[type="tel"],
+.input-group input[type="email"], 
+.input-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.input-group input[type="text"]:focus,
+.input-group input[type="password"]:focus,
+.input-group input[type="tel"]:focus,
+.input-group input[type="email"]:focus,
+.input-group select:focus {
+    border-color: #1a5fd6;
+    outline: none;
+}
+
+/* 아이디 입력 그룹 내의 중복확인 버튼 (input-with-button 클래스가 없는 경우) */
+.input-group > .btn-check-duplicate {
+    display: block; 
+    width: auto; 
+    min-width: 90px; 
+    padding: 8px 15px; 
+    font-size: 0.9em;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    margin-top: 8px; 
+    margin-left: auto; 
+}
+
+.input-group > .btn-check-duplicate:hover {
+    background-color: #5a6268;
+}
+
+/* 다른 input-with-button 스타일은 그대로 유지 (예: 전화번호 인증 버튼용) */
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+.input-with-button input {
+    flex-grow: 1;
+    margin-right: 8px;
+}
+.input-with-button .btn-check-duplicate, /* 만약 다른 곳에서 input-with-button과 함께 쓴다면 */
+.input-with-button .btn-send-auth {     /* 이 스타일이 적용됨 */
+    padding: 10px 15px;
+    font-size: 0.9em;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+
+.email-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.email-group input[type="text"] {
+    flex: 1;
+}
+.email-group select {
+    width: auto;
+    min-width: 120px;
+}
+
+
+.agreement-group {
+    font-size: 0.9em;
+    text-align: left;
+}
+.agreement-group label {
+    display: block;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.agreement-group input[type="checkbox"] {
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.agreement-group .agreement-all strong {
+    font-size: 1.05em;
+}
+.agreement-group hr {
+    margin: 15px 0;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+.agreement-group .view-terms {
+    color: #1a5fd6;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+.agreement-group .view-terms:hover {
+    text-decoration: underline;
+}
+
+
+.btn-signup, .btn-signup-link, .btn.btn-blue {
+    width: 100%;
+    background: linear-gradient(90deg, #1a5fd6 0%, #357cff 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.15em;
+    font-weight: 700;
+    padding: 14px 0 13px 0;
+    margin: 18px 0 18px 0;
+    box-shadow: 0 4px 16px 0 rgba(26,95,214,0.08);
+    letter-spacing: 0.02em;
+    transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+    cursor: pointer;
+    outline: none;
+    display: block;
+}
+.btn-signup:hover, .btn-signup:focus, .btn-signup-link:hover, .btn-signup-link:focus, .btn.btn-blue:hover, .btn.btn-blue:focus {
+    background: linear-gradient(90deg, #357cff 0%, #1a5fd6 100%);
+    box-shadow: 0 6px 20px 0 rgba(26,95,214,0.13);
+    transform: translateY(-2px) scale(1.03);
+}
+.btn-signup:active, .btn-signup-link:active, .btn.btn-blue:active {
+    background: #1a5fd6;
+    box-shadow: 0 2px 8px 0 rgba(26,95,214,0.10);
+    transform: none;
+}
+
+/* 회원가입 페이지 전용 푸터 */
+.signup-page-footer {
+    background-color: #343a40;
+    color: #ccc;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.85em;
+    line-height: 1.6;
+}
+.signup-page-footer p {
+    margin: 5px 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+    .signup-box {
+        padding: 25px 20px;
+        margin: 20px 0; /* 상하 마진 추가 */
+    }
+    .signup-box h2 {
+        font-size: 1.8em;
+    }
+    .email-group {
+        flex-direction: column;
+        gap:10px;
+    }
+    .email-group input[type="text"], .email-group select {
+        width: 100%;
+    }
+    /* 작은 화면에서는 중복확인 버튼도 100% 너비로 변경 (선택 사항) */
+    .input-group > .btn-check-duplicate {
+        width: 100%;
+        margin-left: 0; /* 중앙 또는 왼쪽 정렬 (100% 너비이므로 큰 의미 없음) */
+    }
+}
+
+/* TOP 버튼 스타일은 style.css에서 공통 적용됨. 필요시 아래 import 사용 */
+@import url('./style.css');
